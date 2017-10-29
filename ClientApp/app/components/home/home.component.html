@@ -1,0 +1,23 @@
+<div *ngIf="person">
+    <label>Luke Skywalker Details:</label>
+    <ul>
+        <li>Name: {{ person.name }}</li>
+        <li>Gender: {{ person.gender }}</li>
+        <li>Eye Color: {{ person.eyecolor }}</li>
+        <li>Hair Color: {{ person.haircolor }}</li>
+        <li>Homeworld:</li>
+        <li style="list-style-type: none">
+            <ul style="list-style-type: none">
+                <li>Name: {{ person.homeworld.name }}</li>
+                <li>Terrain: <ul><li *ngFor="let terrain of person.homeworld.terrains">{{ terrain }}</li></ul></li>
+                <li>Diameter: {{ person.homeworld.diameter }}</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div *ngIf="errors">
+    <label>Errors:</label>
+    <ul>
+        <li *ngFor="let error of errors">{{ error.message }}</li>
+    </ul>
+</div>
